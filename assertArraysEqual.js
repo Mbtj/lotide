@@ -10,7 +10,7 @@ const eqArrays = function(actual, expected) {
     }
   }
   return true; // arrays have passed all cases.
-}
+};
 
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
