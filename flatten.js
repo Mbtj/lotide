@@ -1,6 +1,6 @@
-// HELPER FUNCTION
+// HELPER FUNCTIONS
 const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
+  if (actual.length != expected.length) {
     return false;
   } else {
     for (let i = 0; i < actual.length; i++) {
@@ -20,11 +20,16 @@ const assertArraysEqual = function(actual, expected) {
   }
 };
 
-// TEST CASES
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // => true
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // => false
+const flatten = function(list) {
+  let ret = [];
+  for (let i = 0; i < list.length; i++) {
+    if (Array.isArray(list[i])) {
+      ret = ret.concat(flatten(list[i]));
+    } else {
+      ret.push(list[i]);
+    }
+  }
+  return ret;
+};
 
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => true
-assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => false
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3", "4"]);
+console.log(flatten([1, 2, [3, 4], 5, [6]])); // => [1, 2, 3, 4, 5, 6]
