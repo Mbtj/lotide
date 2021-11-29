@@ -1,24 +1,5 @@
-// HELPER FUNCTIONS
-const eqArrays = function(actual, expected) {
-  if (actual.length !== expected.length) {
-    return false;
-  } else {
-    for (let i = 0; i < actual.length; i++) {
-      if (actual[i] !== expected[i]) {
-        return false;
-      }
-    }
-  }
-  return true; // arrays have passed all cases.
-};
+assertArraysEqual = require("./assertArraysEqual");
 
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅✅✅ Assertion Passed ${actual} === ${expected}`);
-  } else {
-    console.log(`❌❌❌ Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
 
 // ACTUAL FUNCITON
 const middle = function(list) {
@@ -35,7 +16,4 @@ const middle = function(list) {
   }
 };
 
-// TEST CASES
-assertArraysEqual(middle([0]), []);
-assertArraysEqual(middle([1,2,3]), [2]);
-assertArraysEqual(middle([1,2,3,4,5,6]), [3,4]);
+module.exports = middle;
