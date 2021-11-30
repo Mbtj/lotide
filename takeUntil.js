@@ -25,3 +25,5 @@ console.log(results2);
 // [ 1, 2, 5, 7, 2 ]
 // ---
 // [ 'I\'ve', 'been', 'to', 'Hollywood' ]
+
+module.exports = takeUntil;

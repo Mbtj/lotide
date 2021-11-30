@@ -13,3 +13,5 @@ const letterPositions = function(string) {
 const arg = process.argv[2];
 
 console.log(letterPositions(arg));
+
+module.exports = letterPositions;

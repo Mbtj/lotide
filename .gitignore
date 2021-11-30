@@ -1,0 +1,4 @@
+# ignore test functions
+test/
+# ignroe node_modules
+node_modules/

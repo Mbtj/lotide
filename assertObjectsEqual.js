@@ -59,3 +59,5 @@ assertObjectsEqual(cd, cd2); // => false
 // TEST OBJECT
 assertObjectsEqual({ab, abc}, {abc, ab}); // => true
 assertObjectsEqual({abc, cd}, {abc, abc}); // => false
+
+module.exports = assertObjectsEqual;

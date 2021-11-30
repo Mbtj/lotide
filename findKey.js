@@ -9,7 +9,6 @@ const assertEqual = function(actual, expected) {
 const findKey = function(object, callback) {
   let ret;
   for (key in object) {
-    console.log(key,callback(object[key]));
     (callback(object[key]) && !ret) ? ret = key : {};
   }
   return ret;
@@ -25,3 +24,5 @@ const result1 = findKey({
 }, x => x.stars === 2) // => "noma"
 
 assertEqual(result1, "noma");
+
+module.exports = findKey;

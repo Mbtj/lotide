@@ -22,3 +22,5 @@ const countLetters = function(word) {
 const arg = process.argv[2];
 
 console.log(countLetters(arg));
+
+module.exports = countLetters;
